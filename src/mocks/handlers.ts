@@ -1,8 +1,9 @@
 import { http, HttpResponse } from 'msw';
-import { CreateUserRequest, User } from '../types/types';
+import { CreateUserRequest, User } from '../api/types';
+import { API_ENDPOINTS } from '../api/endpoints';
 
 export const handlers = [
-  http.get('/api/users', () => {
+  http.get(API_ENDPOINTS.USERS, () => {
     return HttpResponse.json<User[]>(
       [
         {
@@ -15,7 +16,7 @@ export const handlers = [
     );
   }),
 
-  http.post('/api/users', async ({ request }) => {
+  http.post(API_ENDPOINTS.USERS, async ({ request }) => {
     const body = (await request.json()) as CreateUserRequest;
     const { firstName, lastName } = body;
 
