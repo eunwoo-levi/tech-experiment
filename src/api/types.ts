@@ -3,13 +3,12 @@ export interface User {
   lastName: string;
 }
 
-export interface CreateUserRequest {
-  name: string;
+export interface LoginRequest {
   email: string;
   password: string;
 }
 
-export interface CreateUserResponse {
+export interface LoginResponse {
   token: string;
   name: string;
   email: string;
