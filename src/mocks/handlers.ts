@@ -1,34 +1,32 @@
 import { http, HttpResponse } from 'msw';
-import { CreateUserRequest, User } from '../api/types';
-import { API_ENDPOINTS } from '../api/endpoints';
+import { CreateUserRequest, CreateUserResponse, User } from '../api/types';
+
+const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5174';
 
 export const handlers = [
-  http.get(API_ENDPOINTS.USERS, () => {
-    return HttpResponse.json<User[]>(
-      [
-        {
-          id: '1',
-          firstName: 'lee',
-          lastName: 'joo',
-        },
-      ],
+  http.get(`${baseURL}/users`, () => {
+    return HttpResponse.json<User>(
+      {
+        firstName: 'Seong',
+        lastName: 'Eunwoo',
+      },
       { status: 200 }
     );
   }),
 
-  http.post(API_ENDPOINTS.USERS, async ({ request }) => {
+  http.post(`${baseURL}/user`, async ({ request }) => {
     const body = (await request.json()) as CreateUserRequest;
-    const { firstName, lastName } = body;
+    const { name, email, password } = body;
 
-    if (!firstName || !lastName) {
+    if (!name || !email || !password) {
       return HttpResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    return HttpResponse.json<User>(
+    return HttpResponse.json<CreateUserResponse>(
       {
-        id: '2',
-        firstName,
-        lastName,
+        token: 'token1234',
+        name: 'eunwoo',
+        email: 'eunwoo1341@gmail.com',
       },
       { status: 201 }
     );
