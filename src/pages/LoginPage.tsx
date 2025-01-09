@@ -9,8 +9,6 @@ const LoginPage = () => {
   // useLogin 훅에서 반환된 상태와 mutate 함수 사용
   const { mutate: login, isError, error, isPending } = useLogin();
 
-  console.log('테스트', useLogin());
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
