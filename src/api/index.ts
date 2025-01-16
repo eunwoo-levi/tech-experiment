@@ -1,11 +1,9 @@
 import { apiClient } from './apiClient';
-import type { LoginRequest, LoginResponse, User } from './types';
 
 export const api = {
-  // Users
-  getUserInfo: () => apiClient.get<User>('/users'),
+  getExampleData: () => apiClient.get('/example'),
 
-  login: (data: LoginRequest): Promise<LoginResponse> => apiClient.post('/login', data),
+  postExampleData: (data: string) => apiClient.post('/example', data),
 
   // 필요한 다른 API 함수들...
 };
