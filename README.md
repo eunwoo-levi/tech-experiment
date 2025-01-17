@@ -53,20 +53,5 @@ export default tseslint.config({
 
 ***
 
-<br/>
-<br/>
-<br/>
-
-- 임시 사진 저장
-
-- 배송 공장
-![image](https://github.com/user-attachments/assets/38dbde9a-0ea7-4f4e-a1f1-078c78d6ba34)
-
-- 딸기 농장
-![image](https://github.com/user-attachments/assets/dfd8ee93-0f45-4d77-b2c4-8efe0eb9a34f)
-
-- 감자 패키징 공장
-![image](https://github.com/user-attachments/assets/255dbe43-5b43-47b4-8666-c2adacfec313)
-
 
 
