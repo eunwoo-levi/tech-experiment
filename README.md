@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f94f0583-0c4f-4aa6-911a-2328b5fe15c4)# React + TypeScript + Vite
+# React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
